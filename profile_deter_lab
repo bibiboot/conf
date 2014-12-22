@@ -1,0 +1,29 @@
+YELLOW="\[\033[0;33m\]"
+CLEAR="\[\033[0;0m\]"
+#PS1="\$(date +%H:%M) \w$YELLOW \$(parse_git_branch)$CLEAR \$ "
+# Custom bash prompt via kirsle.net/wizards/ps1.html
+export PS1="\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]\u\[$(tput
+setaf 2)\]@\[$(tput setaf 4)\]\h \[$(tput setaf 5)\]\W\[$(tput setaf
+1)\]]\[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"
+
+export PATH=$PATH:/usr/testbed/bin/tevc
+
+alias rhm='cd /proj/USC558L/exp/drehman/cnapp/'
+alias hm='cd /proj/USC558L/exp/drehman/'
+
+alias sym='sudo ./ntpd_corrected -c node5/ntp_conf/ntp_sym.conf -d'
+alias asym='sudo ./ntpd_corrected -c node5/ntp_conf/ntp_assym.conf -d'
+alias slave='sudo ./cntp/bin/slave 2 eth1'
+alias slaved='sudo ./direct/cntp/bin/slave 2 eth0'
+alias master='watch -n 60 "sudo ./cntp/bin/master 1 2 eth1"'
+alias masterd='watch -n 60 "sudo ./direct/cntp/bin/master 1 2 eth0"'
+alias crtr1='sudo ./ntp_router1/bin/router 3 eth0'
+alias crtr2='sudo ./ntp_router2/bin/router 4 eth0'
+
+alias ll='ls -l'
+alias c='clear'
+alias b='make build'
+alias rn='sudo ./bin/r'
+
+alias r12='sudo ./bin/r 1 2'
+alias r21='sudo ./bin/r 2 1'
